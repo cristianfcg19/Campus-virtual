@@ -1,0 +1,49 @@
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+
+                <body>
+
+
+
+
+                    <h2>Datos Alumno</h2>
+
+                    <a th:href="@{/alumno/nuevo}">Nuevo alumno</a>
+                    <br>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>nombre</th>
+                                    <th>primer_apellido</th>
+                                    <th>segundo_apellido</th>
+                                    <th>semestre</th>
+                                    <th>clave_cl</th>
+                                    <th>logc_a</th>
+                                    <th>Modificar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="alumno:${alumnos}">
+                                    <td>[[${alumno.nombre}]]</td>
+                                    <td>[[${alumno.primer_apellido}]]</td>
+                                    <td>[[${alumno.segundo_apellido}]]</td>
+                                    <td>[[${alumno.semestre}]]</td>
+                                    <td>[[${alumno.logc_a}]]</td>
+                                    <td> <a th:href="@{/alumno/modificar/} + ${alumno.clave_p}">Modificar</td>
+                                    <td> <a th:href="@{/alumno/eliminar/} + ${alumno.clave_p}">Eliminar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                </body>
+                </html>
