@@ -5,9 +5,12 @@ import com.campus_virtual.campus_virtual.dao.AlumnoDao;
 import com.campus_virtual.campus_virtual.domain.Alumno;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /*@author m.navarro*/
+
+@Service
 public class AlumnoServiceImp implements AlumnoService {
      @Autowired
     private AlumnoDao alumnoDao;

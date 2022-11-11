@@ -1,14 +1,18 @@
 
 package com.campus_virtual.campus_virtual.controller;
 
-import com.campus_virtual.campus_virtual.domain.Profesor;
-import com.campus_virtual.campus_virtual.service.ProfesorService;
+import com.campus_virtual.campus_virtual.domain.Alumno;
+
+import com.campus_virtual.campus_virtual.service.AlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /* @author m.navarro*/
+@Controller
+
 public class AlumnoController {
      @Autowired
     private AlumnoService alumnoService;
@@ -19,7 +23,7 @@ public class AlumnoController {
     {
         
         
-          var alumno=alumnoService.getAlumno();
+          var alumno=alumnoService.getAlumnos();
           model.addAttribute("alumnoS", alumno);
         
         return "Alumno";
@@ -27,36 +31,36 @@ public class AlumnoController {
      
      
     @GetMapping("/alumno/nuevo")
-    public String alumnoNuevo(Profesor alumno)
+    public String alumnoNuevo(Alumno alumno)
     {
              
-        return "CrearProfesor";
+        return "CrearAlumno";
     }
     
     
-    @PostMapping("/profesor/guardar")
-    public String profesorGuardar(Profesor profesor)
+    @PostMapping("/alumno/guardar")
+    public String alumnoGuardar(Alumno alumno)
     {
-        profesorService.save(profesor);
-        return "redirect:/profesor";
+        alumnoService.save(alumno);
+        return "redirect:/alumno";
     }
     
     
         
-    @GetMapping("/profesor/modificar/{clave_p}")
-    public String profesorActualiza(Profesor profesor,Model model)
+    @GetMapping("/alumno/modificar/{matricula}")
+    public String alumnoActualiza(Alumno alumno,Model model)
     {
-          profesor=profesorService.getProfesor(profesor);
-          model.addAttribute("profesor", profesor);
-          return "CrearProfesor";
+          alumno=alumnoService.getAlumno(alumno);
+          model.addAttribute("alumno", alumno);
+          return "CrearAlumno";
     }
     
  
-     @GetMapping("/profesor/eliminar/{clave_p}")
-    public String profesorEliminar(Profesor profesor)
+     @GetMapping("/alumno/eliminar/{matricula}")
+    public String alumnoEliminar(Alumno alumno)
     {
-          profesorService.delete(profesor);
-           return "redirect:/profesor";
+          alumnoService.delete(alumno);
+           return "redirect:/alumno";
     }
     
 }
