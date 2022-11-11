@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlsn="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <a th:href="@{/carrera}">Regresar</a>
+        <h2>Formulario Carrera</h2>
+        <form th:action="@{/carrera/guardar}"
+              method="post"
+              th:object="${carrera}">
+            <fieldset>
+                <label for="clave_m">Codigo carrera</label>
+                <input type="text" name="clave_m" th:field="*{clave_m}">
+            </fieldset>   
+            
+            <fieldset>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}">
+            </fieldset>
+            
+            <fieldset>
+                <label for="duracion">Duracion</label>
+                <input type="text" name="duracion" th:field="*{duracion}">
+            </fieldset>
+        </form>
+    </body>
+</html>
