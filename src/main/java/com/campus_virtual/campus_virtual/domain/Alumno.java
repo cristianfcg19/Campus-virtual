@@ -4,6 +4,7 @@
  */
 package com.campus_virtual.campus_virtual.domain;
 
+import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,7 +16,7 @@ import lombok.Data;
 @Table(name ="tbalumno")
 public class Alumno {
 @Id 
- private long Materia ;
+  private long matricula ;
   private String nombre;
   private String  primer_apellido;
   private String  segundo_apellido;
@@ -23,8 +24,8 @@ public class Alumno {
   private Long  clave_c1 ;
   private String  logc_a ;
 
-    public Alumno(long Materia, String nombre, String primer_apellido, String segundo_apellido, Long semestre, Long clave_c1, String logc_a) {
-        this.Materia = Materia;
+    public Alumno(long matricula, String nombre, String primer_apellido, String segundo_apellido, Long semestre, Long clave_c1, String logc_a) {
+        this.matricula = matricula;
         this.nombre = nombre;
         this.primer_apellido = primer_apellido;
         this.segundo_apellido = segundo_apellido;
@@ -32,7 +33,9 @@ public class Alumno {
         this.clave_c1 = clave_c1;
         this.logc_a = logc_a;
     }
+
  public Alumno() {
     }
+ 
 
 }

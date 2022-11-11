@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.campus_virtual.campus_virtual.service;
 
 import com.campus_virtual.campus_virtual.dao.AlumnoDao;
@@ -25,7 +22,7 @@ public class AlumnoServiceImp implements AlumnoService {
     @Transactional(readOnly =true)
     public Alumno getAlumno(Alumno alumno) {
         
-    return alumnoDao.findById(alumno.getMateria()).orElse(null);
+    return alumnoDao.findById(alumno.getmatricula()).orElse(null);
     }
 
     @Override
