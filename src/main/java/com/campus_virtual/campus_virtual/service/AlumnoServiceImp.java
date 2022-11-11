@@ -22,7 +22,7 @@ public class AlumnoServiceImp implements AlumnoService {
     @Transactional(readOnly =true)
     public Alumno getAlumno(Alumno alumno) {
         
-    return alumnoDao.findById(alumno.getmatricula()).orElse(null);
+    return alumnoDao.findById(alumno.getMatricula()).orElse(null);
     }
 
     @Override
