@@ -25,7 +25,7 @@
                                     <th>segundo_apellido</th>
                                     <th>semestre</th>
                                     <th>clave_cl</th>
-                                    <th>logc_a</th>
+                                    
                                     <th>Modificar</th>
                                     <th>Eliminar</th>
                                 </tr>
@@ -37,8 +37,8 @@
                                     <td>[[${alumno.segundo_apellido}]]</td>
                                     <td>[[${alumno.semestre}]]</td>
                                     <td>[[${alumno.logc_a}]]</td>
-                                    <td> <a th:href="@{/alumno/modificar/} + ${alumno.clave_p}">Modificar</td>
-                                    <td> <a th:href="@{/alumno/eliminar/} + ${alumno.clave_p}">Eliminar</td>
+                                    <td> <a th:href="@{/alumno/modificar/} + ${alumno.matricula}">Modificar</td>
+                                    <td> <a th:href="@{/alumno/eliminar/} + ${alumno.matricula}">Eliminar</td>
                                 </tr>
                             </tbody>
                         </table>
