@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlsn="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <h2>Datos Materia</h2>
+        <a th:href="@{/materia/nuevo}">Nueva Materia</a>
+        <br>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Creditos</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr th:each="materia:${materias}">
+                    <td>[[${materia.nombre}]]</td>
+                    <td>[[${materia.credito}]]</td>
+                    <td> <a th:href="@{/materia/modificar/} + ${materia.clave_m}">Modificar</td>
+                    <td <a th:href="@{/materia/eliminar/} + ${materia.clave_m}">Eliminar</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </body>
+</html>

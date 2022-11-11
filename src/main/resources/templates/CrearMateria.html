@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlsn="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <a th:href="@{/materia}">Regresar</a>
+        <h2>Formulario Materia</h2>
+        <form th:action="@{/materia/guardar}"
+              method="post"
+              th:object="${materia}">
+            <fieldset>
+                <label for="clave_m">Codigo materia</label>
+                <input type="text" name="clave_m" th:field="*{clave_m}">
+            </fieldset>   
+            
+            <fieldset>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" th:field="*{nombre}">
+            </fieldset>
+            
+            <fieldset>
+                <label for="credito">Credito</label>
+                <input type="int" name="credito" th:field="*{credito}">
+            </fieldset>
+        </form>
+
+    </body>
+
+</html>
