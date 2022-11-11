@@ -24,7 +24,7 @@ public class AlumnoController {
         
         
           var alumno=alumnoService.getAlumnos();
-          model.addAttribute("alumnoS", alumno);
+          model.addAttribute("alumnos", alumno);
         
         return "Alumno";
     } 

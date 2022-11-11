@@ -12,17 +12,17 @@
     <body>
         
    
-        <a th:href="@{/profesor}">Regresar</a>
-        <h2>Formulario Profesor</h2>
+        <a th:href="@{/alumno}">Regresar</a>
+        <h2>Formulario Alumno</h2>
         
-        <form th:action="@{/profesor/guardar}"
+        <form th:action="@{/alumno/guardar}"
               method="post"
-              th:object="${profesor}"
+              th:object="${alumno}"
               >   
       
              <fieldset>    
-            <label for="clave_p">Codigo matricula</label>
-            <input type="text" name="matricula" th:field="*{matricula}">
+            <label for="clave_p">Codigo alumno</label>
+            <input type="text" name="clave_p" th:field="*{clave_p}">
             </fieldset> 
                 
             <fieldset>    
@@ -41,18 +41,18 @@
             </fieldset> 
             
             <fieldset>
-            <label for="semestre">semestre</label>
-            <input type="text" name="semestre" th:field="*{semestre}">
+            <label for="direccion">direccion</label>
+            <input type="text" name="direccion" th:field="*{direccion}">
             </fieldset>
             
             <fieldset>
-            <label for="clave_c1">clave_c1</label>
-            <input type="number" name="clave_c1" th:field="*{clave_c1}">
+            <label for="telefono">telefono</label>
+            <input type="number" name="telefono" th:field="*{telefono}">
             </fieldset>
                 
              <fieldset>
-            <label for="logc_a">logc_a</label>
-            <input type="text" name="logc_a" th:field="*{logc_a}">
+            <label for="horario">horario</label>
+            <input type="text" name="horario" th:field="*{horario}">
             </fieldset>    
                 
                 
