@@ -22,19 +22,19 @@
         <br>
         <h2>Formulario Profesor</h2>
         <br>
-         <div class="form-row">
+        
         <form th:action="@{/profesor/guardar}"
               method="post"
               th:object="${profesor}"
               >   
        <div class="form-row">
-             <div class="form-group col-md-6"> 
+             <div class="form-group col-md-4"> 
              <fieldset>    
             <label for="clave_p">Codigo profesor</label>
             <input type="text" name="clave_p" th:field="*{clave_p}">
             </fieldset> 
                 </div>  
-              <div class="form-group col-md-6">     
+              <div class="form-group col-md-4">     
             <fieldset>    
             <label for="nombre">nombre</label>
             <input type="text" name="nombre" th:field="*{nombre}">
