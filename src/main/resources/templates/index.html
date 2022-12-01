@@ -3,13 +3,30 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
-    <head>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      >
+    <head th:replace="layout/planilla :: cabeza">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 
+                    </head>
+                    <body class="bg-body text-dark">
+                        <div th:replace="layout/planilla :: Navegador"></div>
+
+                        <div class="container-fluid" style="height: 200px ;width:100% ; margin-left:-20px; ">
+
+                            <div class="row justify-content-start"> 
+                                <div th:replace="layout/planilla :: sidebar"></div>               
+                                <div class="col-md-4 ">   
+
+
+                                </div>  
+                            </div>
+                        </div>        
+
+                      
+                    </body>
+                    </html>

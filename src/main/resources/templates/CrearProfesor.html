@@ -3,64 +3,83 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml"
       >
-    <head>
+    <head th:replace="layout/planilla :: cabeza">
    
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     
     <body>
-        
-   
+          <div th:replace="layout/planilla :: Navegador"></div>
+          
+          <div class="container-fluid" style="height: 200px ;width:100% ; margin-left:-20px; ">
+          <div class="row justify-content-start">
+         <div th:replace="layout/planilla :: sidebar"></div>               
+         <div class="col-md-4 offset-md-2">   
+         <br>
         <a th:href="@{/profesor}">Regresar</a>
+        <br>
         <h2>Formulario Profesor</h2>
-        
+        <br>
+         <div class="form-row">
         <form th:action="@{/profesor/guardar}"
               method="post"
               th:object="${profesor}"
               >   
-      
+       <div class="form-row">
+             <div class="form-group col-md-6"> 
              <fieldset>    
             <label for="clave_p">Codigo profesor</label>
             <input type="text" name="clave_p" th:field="*{clave_p}">
             </fieldset> 
-                
+                </div>  
+              <div class="form-group col-md-6">     
             <fieldset>    
             <label for="nombre">nombre</label>
             <input type="text" name="nombre" th:field="*{nombre}">
-            </fieldset>     
-                
+            </fieldset> 
+                </div>   
+             <div class="form-group col-md-6">  
              <fieldset>    
             <label for="primer_apellido">primer_apellido</label>
             <input type="text" name="primer_apellido" th:field="*{primer_apellido}">
             </fieldset>   
-            
+               </div>   
+              <div class="form-group col-md-6"> 
               <fieldset>
             <label for="segundo_apellido">segundo_apellido</label>
             <input type="text" name="segundo_apellido" th:field="*{segundo_apellido}">
             </fieldset> 
-            
+                </div>   
+              <div class="form-group col-md-6"> 
             <fieldset>
             <label for="direccion">direccion</label>
             <input type="text" name="direccion" th:field="*{direccion}">
             </fieldset>
-            
+                 </div>  
+              <div class="form-group col-md-6"> 
             <fieldset>
             <label for="telefono">telefono</label>
             <input type="number" name="telefono" th:field="*{telefono}">
             </fieldset>
-                
+                   </div>
+              <div class="form-group col-md-6">  
              <fieldset>
             <label for="horario">horario</label>
             <input type="text" name="horario" th:field="*{horario}">
             </fieldset>    
-                
-                
-              <input type="submit" name="guardar" value="guardar">     
-                
-            
+                 </div>
+                <div class="form-group col-md-6">   
+              <input type="submit" class="btn btn-primary" name="guardar" value="guardar">     
+                  </div>
+              </div>
         </form>
-        
-     
+             
+         </div> 
+         </div> 
+         </div>      
+    
     </body>
+    
 </html>
