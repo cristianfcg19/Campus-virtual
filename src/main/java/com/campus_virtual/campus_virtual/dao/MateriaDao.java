@@ -5,6 +5,7 @@
 package com.campus_virtual.campus_virtual.dao;
 
 import com.campus_virtual.campus_virtual.domain.Materia;
+import com.campus_virtual.campus_virtual.domain.Materia;
 import org.springframework.data.jpa.repository.JpaRepository;
 /**
  *
