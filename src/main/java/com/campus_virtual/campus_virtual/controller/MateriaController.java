@@ -26,12 +26,12 @@ public class MateriaController {
     public String materia (Model model){
         var materia=materiaService.getMateria();
         model.addAttribute("materias",materia);
-        return "Materia";
+        return "materias/Materia";
     }
          
     @GetMapping("/materia/nuevo")
     public String materiaNueva(Materia materia){
-        return "CrearMateria";
+        return "materias/CrearMateria";
     }
     
     @PostMapping("/materia/guardar")
@@ -44,7 +44,7 @@ public class MateriaController {
     public String materiaActualiza(Materia materia,Model model){
         materia=materiaService.getMateria(materia);
         model.addAttribute("materia",materia);
-        return "CrearMateria";
+        return "materias/CrearMateria";
     }
     
     @GetMapping("/materia/eliminar/{clave_m}")

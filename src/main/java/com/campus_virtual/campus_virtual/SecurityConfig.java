@@ -5,7 +5,9 @@
 package com.campus_virtual.campus_virtual;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -24,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     auth.inMemoryAuthentication()
          .withUser("Christian")
            .password("{noop}1234")
-            .roles("Admin","Profesor","Estudiante")
+            .roles("Admin","Profesor","Alumno")
             .and()
             .withUser("Mateo")
            .password("{noop}1234")
@@ -32,8 +34,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
           .and()
             .withUser("Michelle")
            .password("{noop}1234")
-           .roles("Profesor");
+           .roles("Alumno");
     }
-   
+   @Override
+   protected void configure(HttpSecurity http)throws  Exception 
+   {
+       http.authorizeHttpRequests()
+               .antMatchers("/profesor/nuevo","/profesor/guardar","/profesor/modificar/**","/profesor/eliminar/**",
+                       "/alumno/nuevo","/alumno/guardar","/alumno/modificar/**","/alumno/eliminar/**",
+                       "/materia/nuevo","/materia/guardar","/materia/modificar/**","/materia/eliminar/**"
+                       ).hasRole("Admin")
+               .antMatchers("/alumno","/profesor").hasAnyRole("Admin","Profesor")
+               .antMatchers("/materia","/").hasAnyRole("Admin","Profesor","Alumno")
+               .and()
+               .formLogin()
+               .and()
+               .exceptionHandling()
+               .accessDeniedPage("/errores/403")
+               ;
+               
+                
+               
+               
+   }
     
 }

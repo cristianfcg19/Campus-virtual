@@ -27,7 +27,7 @@ public class AlumnoController {
           var alumno=alumnoService.getAlumnos();
           model.addAttribute("alumnos", alumno);
         
-        return "Alumno";
+        return "alumnos/Alumno";
     } 
      
      
@@ -35,7 +35,7 @@ public class AlumnoController {
     public String alumnoNuevo(Alumno alumno)
     {
              
-        return "CrearAlumno";
+        return "alumnos/CrearAlumno";
     }
     
     
@@ -53,7 +53,7 @@ public class AlumnoController {
     {
           alumno=alumnoService.getAlumno(alumno);
           model.addAttribute("alumno", alumno);
-          return "CrearAlumno";
+          return "alumnos/CrearAlumno";
     }
     
  

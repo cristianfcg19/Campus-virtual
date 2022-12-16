@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      >
+    <head th:replace="layout/planilla :: cabeza">
+
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                </head>
+
+                <body>
+
+
+                    <div th:replace="layout/planilla :: Navegador"></div>
+
+
+                    <div class="container-fluid" style="height: 200px ;width:100% ; margin-left:-20px; ">
+                        <div class="row justify-content-start">
+                            <div th:replace="layout/planilla :: sidebar"></div>               
+                            <div class="col-md-4 offset-md-2">   
+                                <br>
+                                    <a th:href="@{/curso}">Regresar</a>
+                                    <br>
+                                        <h2>Formulario Curso</h2>
+
+                                        <form class="form-inline" th:action="@{/curso/guardar}"
+                                              method="post"
+                                              th:object="${curso}"
+                                              >   
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">  
+                                                    <fieldset>    
+                                                        <label for="clave_p" class="form-label" >cod_curso</label>
+                                                        <input type="text" name="cod_curso"class="form-control" th:field="*{cod_curso}">
+                                                    </fieldset> 
+                                                </div>
+                                                <div class="form-group col-md-6">  
+                                                    <fieldset>    
+                                                        <label for="matricula">Codigo de Alumno</label>
+                                                        <input type="text" name="matricula" class="form-control" th:field="*{matricula}">
+                                                    </fieldset>     
+                                                </div>
+                                                <div class="form-group col-md-6">
+
+                                                    <fieldset>    
+                                                        <label for="clave_p">Codigo de Profesor</label>
+                                                        <input type="text" name="clave_p" class="form-control" th:field="*{clave_p}">
+                                                    </fieldset>   
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <fieldset>
+                                                        <label for="clave_c">Codigo de Carrera</label>
+                                                        <input type="text" name="clave_c" class="form-control" th:field="*{clave_c}">
+                                                    </fieldset> 
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <fieldset>
+                                                        <label for="clave_m">Clave de materia</label>
+                                                        <input type="text" name="clave_m" class="form-control" th:field="*{clave_m}">
+                                                    </fieldset>
+                                                </div>
+                                                
+                                                 <div class="form-group col-md-6">
+                                                    <fieldset>
+                                                        <label for="total_asistencia">Total de asistencia</label>
+                                                        <input type="text" name="total_asistencia" class="form-control" th:field="*{total_asistencia}">
+                                                    </fieldset>
+                                                </div>
+                                                
+                                                <div class="form-group col-md-6">
+                                                    <fieldset>
+                                                        <label for="nota">Nota</label>
+                                                        <input type="text" name="nota" class="form-control" th:field="*{nota}">
+                                                    </fieldset>
+                                                </div>
+                                                   <div class="form-group col-md-6">
+                                                    <fieldset>
+                                                        <label for="cod_estado">Nota</label>
+                                                        <input type="text" name="cod_estado" class="form-control" th:field="*{cod_estado}">
+                                                    </fieldset>
+                                                </div>
+                                                
+                                                <div class="form-group col-md-4">
+
+                                                    <input  class="btn btn-primary"  type="submit" name="guardar" value="guardar">     
+                                                </div>   
+                                            </div>    
+
+                                        </form>
+                                        </div>
+                                        </div>
+                                        <div th:fragment="footer" class="container-fluid">
+                                            <footer th:fragment="footer" class="footer">
+                                                <p>&COPY; [[#{plantilla.derechos}]] |
+                                                    <a th:href="@{/curso/nuevo(lang=es)}">ES</a> |
+                                                    <a th:href="@{/curso/nuevo(lang=en)}">EN</a></p>
+                                            </footer>
+                                        </div>
+                                        </div>
+
+
+
+                                        </body>
+                                        </html>

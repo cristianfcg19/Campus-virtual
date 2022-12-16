@@ -5,6 +5,7 @@
 package com.campus_virtual.campus_virtual.domain;
 
 import java.util.logging.Logger;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -16,6 +17,7 @@ import lombok.Data;
 @Table(name ="tbalumno")
 public class Alumno {
 @Id 
+@Column(name ="matricula")
   private long matricula ;
   private String nombre;
   private String  primer_apellido;

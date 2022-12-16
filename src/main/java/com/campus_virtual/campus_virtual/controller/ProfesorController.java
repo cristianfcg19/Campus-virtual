@@ -31,7 +31,7 @@ public class ProfesorController {
           var profesor=profesorService.getProfesors();
           model.addAttribute("profesores", profesor);
         
-        return "Profesor";
+        return "profesores/Profesor";
     } 
      
      
@@ -39,7 +39,7 @@ public class ProfesorController {
     public String profesorNuevo(Profesor profesor)
     {
              
-        return "CrearProfesor";
+        return "profesores/CrearProfesor";
     }
     
     
@@ -57,7 +57,7 @@ public class ProfesorController {
     {
           profesor=profesorService.getProfesor(profesor);
           model.addAttribute("profesor", profesor);
-          return "CrearProfesor";
+          return "profesores/CrearProfesor";
     }
     
  
