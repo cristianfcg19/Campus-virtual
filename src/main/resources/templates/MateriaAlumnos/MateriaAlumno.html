@@ -23,18 +23,17 @@
                     <br>
                         
 
-                        <h2>Datos curso</h2>
+                        <h2>Datos materia_alumno</h2>
 
-                        <a class="link-primar" th:href="@{/curso/nuevo}">Nuevo curso</a>
+                        <a class="link-primar" th:href="@{/materia_alumno/nuevo}">Nuevo materia_alumno</a>
                         <br>
                             <br>
                                 <table class="table table-striped table-hover" border="1">
                                     <thead>
                                         <tr >
-                                            <th>Codigo Curso</th>
-                                            <th>Total de Asistencia</th>
-                                            <th>Nota</th>
-                                            <th>Estado</th>
+                                            <th>Codigo Materia</th>
+                                            <th>Codigo Alumno</th>
+                                            
 
 
                                             <th>Modificar</th>
@@ -42,20 +41,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr th:each="curso:${cursos}">
-                                            <td >[[${curso.cod_curso}]]</td>
-                                            <td >[[${curso.total_asistencia}]]</td>
-                                            <td >[[${curso.nota}]]</td>
-                                            <td >[[${curso.cod_estado}]]</td>
+                                        <tr th:each="materia_alumno:${materia_alumnos}">
+                                            <td >[[${materia_alumno.clave_m1}]]</td>
+                                            <td >[[${materia_alumno.matricula2}]]</td>
+                                         
                                           
 
-                                            <td > <a th:href="@{/curso/modificar/} + ${curso.cod_curso}">Modificar</a></td>
-                                            <td > <a th:href="@{/curso/eliminar/} + ${curso.cod_curso}">Eliminar</a></td>
+                                            <td > <a th:href="@{/materia_alumno/modificar/} + ${materia_alumno.cod_materia_alumno}">Modificar</a></td>
+                                            <td > <a th:href="@{/materia_alumno/eliminar/} + ${materia_alumno.cod_materia_alumno}">Eliminar</a></td>
                                         </tr>
                                         
                                     </tbody>
                                 </table>
-                                <div class="text-center p-8" th:if="${cursos == null or cursos.empty}">
+                                <div class="text-center p-8" th:if="${materia_alumnos == null or materia_alumnos.empty}">
                                 <span >Lista vacía</span>
                             </div>
                                 </div>                   
@@ -63,8 +61,8 @@
                                 <div th:fragment="footer" class="container-fluid">
                                     <footer th:fragment="footer" class="footer">
                                         <p>&COPY; [[#{plantilla.derechos}]] |
-                                            <a th:href="@{/curso(lang=es)}">ES</a> |
-                                            <a th:href="@{/curso(lang=en)}">EN</a></p>
+                                            <a th:href="@{/materia_alumno(lang=es)}">ES</a> |
+                                            <a th:href="@{/materia_alumno(lang=en)}">EN</a></p>
                                     </footer>
                                 </div>
                                 </div>   

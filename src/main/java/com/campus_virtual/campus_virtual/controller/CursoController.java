@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CursoController {
   @Autowired
   private CursoService cursoService;
-
-     
+   @Autowired
+  private AlumnoService alumnoDao;   
        @GetMapping("/curso")
     public String curso (Model model)
     {
-        
+          Curso c;
           var curso=cursoService.getCursos();
           model.addAttribute("cursos", curso);
           

@@ -21,8 +21,10 @@ import org.springframework.transaction.annotation.Transactional;
 public class CursoServiceImp implements CursoService{
     @Autowired
     private CursoDao cursoDao;
-  
     
+    @Autowired
+    private AlumnoDao alumnoDao;
+
     @Override
     @Transactional(readOnly =true)
     public List<Curso> getCursos() {
@@ -40,6 +42,7 @@ public class CursoServiceImp implements CursoService{
     @Transactional
     public void save(Curso curso) {
      
+        
         cursoDao.save(curso);
     }
 

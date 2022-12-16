@@ -4,6 +4,7 @@
  */
 package com.campus_virtual.campus_virtual.domain;
 
+import java.io.Serializable;
 import java.util.logging.Logger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name ="tbalumno")
-public class Alumno {
+public class Alumno implements Serializable{
 @Id 
 @Column(name ="matricula")
   private long matricula ;
